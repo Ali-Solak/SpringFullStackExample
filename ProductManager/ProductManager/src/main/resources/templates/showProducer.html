@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Producer</title>
+</head>
+<body>
+<h3>Producer Infos</h3>
+        <table border="1" cellpadding="10" th:object="${producer}">
+            <tr>
+                <td>Producer ID:</td>
+                <td><input type="text" th:field="*{id}"/></td>
+            </tr>
+            <tr>
+                <td>Producer Name:</td>
+                <td><input type="text" th:field="*{name}"/></td>
+        </table>
+
+        <h3>Products:</h3>
+        <table border="1">
+            <th>Product ID</th>
+            <th>Product Name</th>
+            </tr>
+            <tr th:each="product : ${producer.products}">
+                <td th:text="${product.id}"> Product ID</td>
+                <td th:text="${product.name}"> Product ID</td>
+                </td>
+            </tr>
+        </table>
+
+</body>
+</html>
