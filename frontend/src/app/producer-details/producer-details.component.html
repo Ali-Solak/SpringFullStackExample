@@ -1,0 +1,15 @@
+<h2>Product Details</h2>
+
+<hr/>
+<div *ngIf="producer">
+    <div>
+        <label><b>Name: </b></label> {{producer.name}}
+    </div>
+    <div>
+        <label><b>Products: </b></label><td *ngFor="let products of producer.products">{{products.name}} , </td>
+    </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Product List</button><br>
